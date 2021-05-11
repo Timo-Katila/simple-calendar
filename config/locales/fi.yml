@@ -1,0 +1,5 @@
+fi:
+  simple_calendar:
+    previous: "Edellinen"
+    next: "Seuraava"
+    week: "Viikko"

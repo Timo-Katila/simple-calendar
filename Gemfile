@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'pg', '~> 1.1'
 #Simple calendar
 gem "simple_calendar", "~> 2.4"
+#Localization
+gem 'rails-i18n'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
