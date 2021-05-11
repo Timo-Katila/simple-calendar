@@ -1,1 +1,35 @@
 @import "simple_calendar";
+
+.simple-calendar {
+  .day-name{
+    background-color: #14213d ;
+    color:#ffffff;
+  }
+  .day {
+    background-color: #e5e5e5;   
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background-color: #ffffff;
+  }
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+
+}
+
