@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+<table class="table is-striped is-fullwidth">
+  <thead>
+    <tr>
+      <th> Nimi </th>
+      <th> kuvaus </th>
+      <th> Alkaa </th>
+      <th> Päättyy </th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= @meeting.name %> </td>
+        <td> <%= @meeting.description %> </td>
+        <td> <%= @meeting.start_time.strftime("%d.%m.%Y" " klo: " "%H.%M")  %> </td>
+        <td>  <%= @meeting.end_time.strftime("%d.%m.%Y" " klo: " "%H.%M") %>  </td>
+</p>
+  </table>
+  <div class="columns">
+    <div class="column">
+      <%= link_to 'Peruuta', meetings_path, class:"button is-link is-fullwidth" %>
+    </div>
+    <div class="column">
+      <%= link_to 'Muokkaa', edit_meeting_path(@meeting), class:"button is-success is-fullwidth" %> 
+    </div>
+  </div>
+
+
+
+
