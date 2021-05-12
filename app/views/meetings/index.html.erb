@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="title">Tapahtumat</h1>
+
+<table class="table is-striped">
+  <thead>
+    <tr>
+      <th>Nimi</th>
+      <th>Kuvaus</th>
+      <th>Tapahtuma alkaa</th>
+      <th>Tapahtuma päättyy</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meetings.each do |meeting| %>
+      <tr>
+        <td><%= meeting.name %></td>
+        <td><%= meeting.description %></td>
+        <td><%= meeting.start_time.strftime("%d.%m.%Y" " klo: " "%H.%M") %></td>
+        <td><%= meeting.end_time.strftime("%d.%m.%Y" " klo: " "%H.%M") %></td>
+        <td><%= link_to 'Näytä', meeting, class:"button is-secondary" %></td>
+        <td><%= link_to 'Muokkaa', edit_meeting_path(meeting), class:"button is-primary" %></td>
+        <td><%= link_to 'Poista', meeting, method: :delete, class:"button is-danger", data: { confirm: 'Oletko varma?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Uusi tapahtuma', new_meeting_path, class:"button is-link is-success" %>

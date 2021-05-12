@@ -1,0 +1,49 @@
+<%= form_with(model: meeting) do |form| %>
+  <% if meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+        <% meeting.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "Nimi" %>
+    <%= form.text_field :name, class:"input"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, "Kuvaus" %>
+    <%= form.text_field :description, class:"input" %>
+  </div>
+  
+  <div class="columns">
+    
+    <div class="column">
+      <div class="field">
+        <%= form.label :start_time, "Tapahtuma alkaa:", class:"label"%>
+        <%= form.datetime_select :start_time, class:"select" %>
+      </div>
+    </div>
+  
+     <div class="column">
+      <div class="field">
+        <%= form.label :end_time, "Tapahtuma päättyy", class:"label" %>
+        <%= form.datetime_select :end_time, class:"select" %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="columns">
+    <div class="column">
+        <%=link_to "Peruuta", meetings_path, class:"button is-link is-fullwidth"%></button>
+    </div>
+    <div class="column">
+    <%= form.submit "Tallenna", class:"button is-success is-fullwidth" %>
+    </div>
+  </div>
+<% end %>
